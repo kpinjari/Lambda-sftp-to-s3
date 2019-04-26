@@ -1,0 +1,15 @@
+S3_BUCKET: 'td-datamigr-sfmc-sftp-rejection-dev'
+SECRET_MANAGER: 
+  name: 'sftp/parametersecrets'
+  keys:
+    sftpPath: 'sftpPath'
+    sftpUserName: 'sftpUserName'
+    sftpPassword: 'sftpPassword'
+    remoteDirectory: 'remoteDirectory'
+REGULAR_EXPRESSION: '(\{){0,1}[0-9a-fA-F]{8}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{4}\-[0-9a-fA-F]{12}(\}){0,1} ([a-zA-Z]+) (\d+).txt'
+DYNAMODB_TABLE:
+  name: 'SFTPFileExtractRecord'
+  columns:
+    primaryCol: 'FileName'
+    sortCol: 'MappedFileName'
+OUTPUT_FILE_PREFIX: 'SFMC_GLOBAL_REJECTED_'
